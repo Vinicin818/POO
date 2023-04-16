@@ -1,0 +1,31 @@
+/* Programação Orientada a Objetos - IFPR
+ * Aluno: Vinícius Mendes Paloschi
+ * Professor Nelson Belincanta
+ */
+
+import javax.swing.JOptionPane; //importa a blibliotéca JOptionPane
+
+public class Atv03 { //Inicia a classe Atv03
+	public static void main(String[] args){ //Inicia a classe Main
+
+        String aux;
+        float p1, p2, trab; //Define as variáveis como Float 
+        //p1 = 1a prova; p2 = 2a prova; trab = travalho;
+
+        //entrada dos dados com a classe JOptionPane
+        aux = JOptionPane.showInputDialog("Entre com a nota da primeira prova"); //Mensagem a ser printada
+        p1 = Float.parseFloat(aux); //Converte p1 para Float
+
+        aux = JOptionPane.showInputDialog("Entre com a nota da segunda prova"); //Mensagem a ser printada
+        p2 = Float.parseFloat(aux); //Converte p2 para Float
+
+        aux = JOptionPane.showInputDialog("Entre com a nota do trab"); //Mensagem a ser printada
+        trab = Float.parseFloat(aux); //Converte trab para Float
+
+        float media = (p1 + p2 + trab) / 3; //Inicializa a varável media e atribuindo valor a ela
+        
+        JOptionPane.showMessageDialog(null, "Media = " + media); //Mensagem a ser printada para resultado + média
+
+        
+    }
+}
