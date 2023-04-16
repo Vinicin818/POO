@@ -1,0 +1,26 @@
+/* Programação Orientada a Objetos - IFPR
+ * Aluno: Vinícius Mendes Paloschi
+ * Professor Nelson Belincanta
+ */
+
+import java.util.Scanner; //Importa Scanner para leitura de dados inseridos.
+
+import java.io.IOException; //Importa a bibliotéca IOException
+
+public class Atv02 { //Inicia a classe Atv02
+	public static void main(String[] args) throws IOException { //Inicia a classe Main
+		
+        Scanner input = new Scanner(System.in); //Define input como a variavel de entrada
+        
+        System.out.println("Digite um numero inteiro"); //Mensagem a ser printada
+        int b = input.nextInt(); //Inicializa a variável b
+        
+        input.close(); //fecha o objeto input
+        
+        double c = 12.5; //Inicializa a variável x e atribui um valor a ela 
+        double a = b * c; //Calcula o valor de "a"
+        
+        // Exibe o valor do produto
+        System.out.println("O produto do argumento b (" + b + ") e c (" + c + ") é: a ( " + a + " )" ); // Exibe o valor do produto
+	}
+}
