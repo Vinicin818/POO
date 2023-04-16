@@ -1,0 +1,29 @@
+/* Programação Orientada a Objetos - IFPR
+ * Aluno: Vinícius Mendes Paloschi
+ * Professor Nelson Belincanta
+ */
+
+import java.util.Scanner; //Importa Scanner para leitura de dados inseridos.
+
+public class Atv01 { //Inicia a classe Atv01
+    public static void main(String[] args) { //Inicia a classe Main
+       
+        Scanner input = new Scanner(System.in); //Define input como a variavel de entrada
+
+        double soma = 0; //Inicializa a variavel
+        boolean continua = true; //Inicializa a variavel
+
+            System.out.println("Insira os números e em seguida insira um texto para encerrar."); //Printa uma informação
+
+        while (continua) { //Inicia o laço while
+            System.out.print("Insira um número: "); //Printa a mensagem
+            if (input.hasNextDouble()) { //Se
+                soma += input.nextDouble(); 
+            } else { //Se não
+                continua = false;
+            }
+        } //Encerra o laço While
+
+        System.out.println("A soma dos números é: " + soma); //Printa a mensagem + a variavel soma
+    }
+}
