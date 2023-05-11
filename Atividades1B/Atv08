@@ -1,0 +1,123 @@
+/* Atividade 08;
+ * Desenvolvida em Java;
+ * Aluno: Vinícius Mendes Paloschi;
+ * Aula: Programação Orientada a Objetos;
+ */
+
+import java.util.Scanner; //importação da classe Scanner do pacote java.util
+
+public class Atv08 {
+
+    final static Scanner LER = new Scanner(System.in); //prepara a entrada de dados
+    final static String nomesCliente[] = new String[10]; //declaração e alocação do vetor assentos 
+    final static boolean assentos[] = new boolean[10]; //declaração e alocação do vetor assentos 
+
+    public static void CompraAssento(){
+
+        System.out.println("Por favor digite 1 para Primeira Classe e digite 2 para Classe Econômica"); //Printa a mensagem para informar o usuário 
+
+        int entrada = LER.nextInt();//entrada para a classe de compra
+
+        if (entrada == 1){ //se entrada == primeira classe
+            int i = 0;
+            boolean assentoLivre = true;
+
+            do{
+                if (i == 5){ //apenas 5 assentos da primeira classe
+                    System.out.println("Todos os assentos da primeira classe estão cheios"); //Avisa se os assentos da primeira classe estiverem ocupados
+
+                    for(int bancos = 5; bancos<11; bancos++){
+                        if (assentos[bancos] == false){
+                            System.out.println("Possuem assentos disponiveis na classe economica"); //Avisa se os assentos da classe econômica estiverem livres
+                            System.out.println("deseja comprar assentos ? (1 (sim) 2 (não)0)"); //Pergunta se deseja comprar assentos
+                            int a = LER.nextInt();
+
+                            if (a == 1){
+                                CompraAssento();
+                            } else{
+                                System.out.println("Não será possivel realizar a compra!");//Avisa que não será possivel finalizar a compra
+                            }
+                            break;
+                        }
+                    }
+                    break;
+                }
+
+                if (assentos[i] == false){
+                    System.out.println("digite seu nome para a compra");//Pede o nome do cliente
+                    String nomeCliente = LER.next();//Lê o nome do cliente
+                    nomesCliente[i] = nomeCliente;
+                    assentos[i] = true;
+                    assentoLivre = false;
+                } else{
+                    i += 1;
+                }
+
+            }while(assentoLivre);
+        }
+
+        if (entrada == 2){ //se entrada == classe economica
+            int i = 5;
+            boolean assentoLivre = true;
+
+            do{
+                if (i == 10){ //apenas 5 assentos da classe economica
+                    System.out.println("Todos os assentos da economica estão ocupados");//Informa que os assentos da ecônomica estão oculpados
+
+                    for(int bancos = 0; bancos<6; bancos++){
+                        if (assentos[bancos] == false){
+                            System.out.println("Possuem assentos disponiveis na primeira classe");//Avisa se os assentos da primeira classe estiverem livres
+                            System.out.println("deseja comprar assentos ? (1 (sim) 2 (não))");//Pergunta se deseja comprar assentos
+
+                            int a = LER.nextInt();
+
+                            if (a == 1){
+                                CompraAssento();
+                            } else{
+        
+                                System.out.println("Pena que não sera possivel realizar a compra :(");//Avisa que não será possivel finalizar a compra
+                            }
+                            break;
+                        }
+                        System.out.println("infelizmente não há assentos disponiveis");//Informa que não há mais assentos
+                    }
+                    System.out.println("infelizmente não há assentos disponiveis");//Informa que não há mais assentos
+
+                    break;
+                }
+
+                if (assentos[i] == false){
+                    System.out.println("digite seu nome para a compra");//Informa para o cliente inserir o nome
+                    String nomeCliente = LER.next();//Lê o nome do cliente
+                    nomesCliente[i] = nomeCliente;
+                    assentos[i] = true;
+                    assentoLivre = false;
+                } else{
+                    i += 1;
+                }
+
+            }while(assentoLivre);
+        }   
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("\nbem vindo a novo sistema automatizado de reservas. \n");//Dá boas vindas
+        
+        for (int i = 0; i<10; i++){
+
+            System.out.println("\nA seguir os assentos disponiveis ou não");//Mostra os assentos livres ou não
+            System.out.println("\nprimeira classe a seguir: ");//Primeira classe
+            for(int a = 0; a<10; a++){
+                System.out.println(assentos[a]+ "\t"+ nomesCliente[a]);
+                if (a == 4){
+                System.out.println("\nclasse economica a seguir: ");//Classe econômica
+                }
+        }
+            CompraAssento();
+        }
+
+        System.out.println("Todas os assentos lotados"); //Informa que não há assentos livres
+        System.out.println("O próximo voo parte em 3 horas"); //Avisa quanto haverá próximos assentos
+    }    
+}
