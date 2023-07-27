@@ -1,0 +1,44 @@
+public class Atv09 {//Início da classe inicial
+    
+    public static void main(String[] args) { //Início do método Main
+        //Definição dos vetores 
+        int[] vetor = {10, 15, 2, 103, 81, 12, 6, 34, 12, 10};
+        int[] vetor2 = {10, 83, 34, 87, 64, 23, 98, 12, 6, 3};
+
+        //Métodos implementados
+        printInicial(vetor);
+        somaValores(vetor, vetor2);
+        
+    } //Fim do Main
+    
+    //Declaração do método printValores que recebe um vetor de inteiros e imprime os números
+    public static void printInicial(int[] vetor) {
+        System.out.println("Saida do Vetor: ");
+        correVetor(vetor);
+    } //Fim do método printInicial 
+
+    private static void correVetor(int[] vetor) {
+        //Laço de repetição que percorre o vetor fazendo print de cada valor
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i] + "\t");
+        }
+        //Print para pular linha
+        System.out.println();
+    } //Fim do método correVetor
+
+    //Declaração do método somaValores
+    public static void somaValores (int[] vetor, int[] vetor2) {
+        //Define o vetorSoma para receber os valores dos vetores somados
+        int[] vetorSoma = new int[vetor.length];
+
+        //Define a soma para o vetorSoma e atribui o mesmo para vetor
+        for (int i = 0; i < vetor.length; i++) {
+            vetorSoma[i] = vetor[i] + vetor2[i];
+        }
+
+        System.out.println("Saida do vetor somado: ");
+        //Chama o correVetor para fazer os prints dos valores
+        correVetor(vetorSoma);
+    } //Fim do meétodo somaValores
+
+}//Final do código
